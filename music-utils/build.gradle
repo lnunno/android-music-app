@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral() // For google maven repos.
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile "junit:junit:4.11"
+    compile 'com.google.guava:guava:18.0'     // Google Guava library.
+    compile 'com.google.code.gson:gson:2.2.4' // Google GSON library.
+    compile group: 'commons-io', name: 'commons-io', version: '2.4' // Apache Commons IO.
+}

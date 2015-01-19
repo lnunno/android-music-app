@@ -20,7 +20,6 @@ public class HttpUtils {
 
     private static final Joiner.MapJoiner paramJoiner = Joiner
             .on('&')
-            .skipNulls()
             .withKeyValueSeparator("=");
 
     private static final Joiner urlJoiner = Joiner

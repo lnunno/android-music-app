@@ -31,4 +31,8 @@ public enum ArtistBucket {
     private ArtistBucket(String s){
         name = s;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -8,6 +8,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile "junit:junit:4.11"
     compile 'com.google.guava:guava:18.0'     // Google Guava library.
-    compile 'com.google.code.gson:gson:2.2.4' // Google GSON library.
+//    compile 'com.google.code.gson:gson:2.3.1' // Google GSON library. NOT YET USED.
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1' // Simple JSON.
     compile group: 'commons-io', name: 'commons-io', version: '2.4' // Apache Commons IO.
 }

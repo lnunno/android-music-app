@@ -15,7 +15,8 @@ Love music? Love being up to date? Personify helps you stay up to date with the 
   1. List of artist biographies.
   2. List of artist news.
   3. List of artist events.
-  4. Has a link to the artist’s official twitter (if exists).
+  4. Shows artist photos.
+  5. Has a link to the artist’s official twitter (if exists).
 6. Remembers the screen that you were on previously in the app when exiting and re-entering.
 
 ### Extra features (Probably not in release v 1.0)

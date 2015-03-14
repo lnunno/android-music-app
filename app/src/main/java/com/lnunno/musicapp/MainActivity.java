@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.echonest.api.v4.Artist;
 import com.echonest.api.v4.EchoNestException;
 import com.lnunno.musicapp.components.ArtistAdapter;
+import com.lnunno.musicapp.tasks.RetrieveArtistsTask;
 
 import java.util.List;
 
@@ -21,13 +22,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView hot_artist_view = (ListView) findViewById(R.id.hotartists_listview);
-        try {
-            List<Artist> hot_artists = EchoNestUtils.getHotArtists(100);
-            ArtistAdapter artistAdapter = new ArtistAdapter(this, hot_artists);
-            hot_artist_view.setAdapter(artistAdapter);
-        } catch (EchoNestException e) {
-            e.printStackTrace();
-        }
+        ArtistAdapter artistAdapter = new ArtistAdapter(this);
+        hot_artist_view.setAdapter(artistAdapter);
+        new RetrieveArtistsTask(artistAdapter).execute();
     }
 
 

@@ -24,7 +24,7 @@ public class EchoNestUtils {
     public static List<Artist> getHotArtists(int numResults) throws EchoNestException {
         ArtistParams params = new ArtistParams();
         params.setResults(numResults);
-        params.sortBy(Constants.SONG_HOTTTNESSS, false);
+        params.sortBy(ArtistParams.SORT_HOTTTNESSS, false);
         List<Artist> hot_artists = EN.searchArtists(params);
         return hot_artists;
     }

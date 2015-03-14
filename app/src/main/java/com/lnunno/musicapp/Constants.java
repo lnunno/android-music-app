@@ -24,5 +24,4 @@ public class Constants {
         EN.setTraceRecvs(TRACE);
     }
 
-    public static final String SONG_HOTTTNESSS = "song_hotttnesss";
 }

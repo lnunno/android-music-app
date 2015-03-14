@@ -13,7 +13,11 @@ import java.util.List;
  */
 public class ArtistAdapter extends ArrayAdapter<Artist> {
 
+    public ArtistAdapter(Context context) {
+        super(context, R.layout.artist_list_layout, R.id.label);
+    }
+
     public ArtistAdapter(Context context, List<Artist> artists) {
-        super(context, R.layout.artist_list_layout, artists);
+        super(context, R.layout.artist_list_layout, R.id.label, artists);
     }
 }

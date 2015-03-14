@@ -3,7 +3,7 @@ package com.lnunno.musicutils;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.lnunno.musicutils.echonest.EchoNestUtils;
+import com.lnunno.musicutils.echonest.EchoNestExampleUtils;
 import com.lnunno.musicutils.echonest.Secret;
 import com.lnunno.musicutils.echonest.artist.ArtistBucket;
 import com.lnunno.musicutils.http.HttpUtils;
@@ -23,7 +23,7 @@ public class Testing {
                 Optional.of(params)));
 
         List<ArtistBucket> artistBucketList = ImmutableList.of(ArtistBucket.BIOGRAPHIES, ArtistBucket.IMAGES, ArtistBucket.GENRE);
-        System.out.println(EchoNestUtils.artistQuery(
+        System.out.println(EchoNestExampleUtils.artistQuery(
                 Optional.of(params),
                 Optional.of(artistBucketList)
         ));

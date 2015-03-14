@@ -14,10 +14,10 @@ import java.util.Map;
 /**
  * Created by Lucas on 1/17/2015.
  */
-public class EchoNestUtils {
+public class EchoNestExampleUtils {
 
     // Can't initialize.
-    private EchoNestUtils() {
+    private EchoNestExampleUtils() {
     }
 
     public static final String BUCKET = "bucket";

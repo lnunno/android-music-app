@@ -1,7 +1,7 @@
 package com.lnunno.musicutils.echonest.artist;
 
 import com.echonest.api.v4.Params;
-import com.lnunno.musicutils.echonest.EchoNestUtils;
+import com.lnunno.musicutils.echonest.EchoNestExampleUtils;
 
 /**
  * Enum for artist bucket on echo nest.
@@ -40,6 +40,6 @@ public enum ArtistBucket {
     }
 
     public void addAsParam(Params params) {
-        params.add(EchoNestUtils.BUCKET, name);
+        params.add(EchoNestExampleUtils.BUCKET, name);
     }
 }

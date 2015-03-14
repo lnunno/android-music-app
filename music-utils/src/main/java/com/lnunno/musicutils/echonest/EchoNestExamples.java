@@ -1,7 +1,6 @@
 package com.lnunno.musicutils.echonest;
 
 import com.echonest.api.v4.Artist;
-import com.echonest.api.v4.ArtistParams;
 import com.echonest.api.v4.Biography;
 import com.echonest.api.v4.Blog;
 import com.echonest.api.v4.EchoNestException;
@@ -10,7 +9,7 @@ import com.echonest.api.v4.Review;
 
 import java.util.List;
 
-import static com.lnunno.musicutils.echonest.EchoNestUtils.EN;
+import static com.lnunno.musicutils.echonest.EchoNestExampleUtils.EN;
 
 /**
  * Created by Lucas on 1/19/2015.
@@ -23,7 +22,7 @@ public class EchoNestExamples {
 
     public static void runArtistExample() throws EchoNestException {
         List<Artist> results = EN.searchArtists("minus the bear");
-        for(Artist artist : results){
+        for (Artist artist : results) {
             System.out.println(artist);
             for (Biography bio : artist.getBiographies()) {
                 System.out.println("SITE:\n" + bio.getSite());

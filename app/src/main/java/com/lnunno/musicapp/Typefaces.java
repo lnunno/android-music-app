@@ -20,6 +20,9 @@ public class Typefaces {
 
     private static final Hashtable<String, Typeface> cache = new Hashtable<String, Typeface>();
 
+    private Typefaces() {
+    }
+    
     public static Typeface get(Context c, String assetPath) {
         synchronized (cache) {
             if (!cache.containsKey(assetPath)) {

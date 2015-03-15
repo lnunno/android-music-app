@@ -40,3 +40,5 @@ Uses hamburger menu with a search list item and links to other views within the 
 
 ## Screenshots of similar apps
 Spotify is somewhat of a related app. I like their interface, but their artist biographies and (lack of) news sections could be a lot better. I am also including a screenshot from Google Music for comparison.
+
+![](https://github.com/lnunno/personify/blob/master/images/app_screenshots/Screenshot_2015-02-08-19-49-24.png) ![](https://github.com/lnunno/personify/blob/master/images/app_screenshots/Screenshot_2015-02-08-19-49-37.png) ![](https://github.com/lnunno/personify/blob/master/images/app_screenshots/Screenshot_2015-02-08-19-50-53.png) ![](https://github.com/lnunno/personify/blob/master/images/app_screenshots/Screenshot_2015-02-08-19-51-16.png) ![](https://github.com/lnunno/personify/blob/master/images/app_screenshots/Screenshot_2015-02-08-19-51-32.png)

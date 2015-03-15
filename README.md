@@ -1,4 +1,6 @@
 # Personify
+![](https://github.com/lnunno/personify/blob/master/images/Personify-Logo.png)
+
 Prototype music discovery application for Android. Uses the Echo Nest java API along with Google Guava.
 
 ## Description
@@ -22,3 +24,19 @@ Love music? Love being up to date? Personify helps you stay up to date with the 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration
   1. Syncs saved/followed artists across Personify and Spotify.
+
+## Interface design proposal
+**Note:** The final product will differ, these are initial interface ideas and sketches using the draw.io mockup tool.
+
+### Artist view
+Main information view with tabbed interface for displaying multiple items per artist.
+
+![](https://github.com/lnunno/personify/blob/master/images/Artist-View.png)
+
+### Search and navigation screen
+Uses hamburger menu with a search list item and links to other views within the app.
+
+![](https://github.com/lnunno/personify/blob/master/images/Hamburger-Menu.png)
+
+## Screenshots of similar apps
+Spotify is somewhat of a related app. I like their interface, but their artist biographies and (lack of) news sections could be a lot better. I am also including a screenshot from Google Music for comparison.

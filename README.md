@@ -31,12 +31,12 @@ Love music? Love being up to date? Personify helps you stay up to date with the 
 ### Artist view
 Main information view with tabbed interface for displaying multiple items per artist.
 
-![](https://github.com/lnunno/personify/blob/master/images/Artist-View.png)
+<a href="https://github.com/lnunno/personify/blob/master/images/Artist-View.png"><img src="https://github.com/lnunno/personify/blob/master/images/Artist-View.png" width="216" height="384"></a>
 
 ### Search and navigation screen
 Uses hamburger menu with a search list item and links to other views within the app.
 
-![](https://github.com/lnunno/personify/blob/master/images/Hamburger-Menu.png)
+<a href="https://github.com/lnunno/personify/blob/master/images/Hamburger-Menu.png"><img src="https://github.com/lnunno/personify/blob/master/images/Hamburger-Menu.png" width="216" height="384"></a>
 
 ## Screenshots of similar apps
 Spotify is somewhat of a related app. I like their interface, but their artist biographies and (lack of) news sections could be a lot better. I am also including a screenshot from Google Music for comparison.

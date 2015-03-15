@@ -24,4 +24,5 @@ public class Constants {
         EN.setTraceRecvs(TRACE);
     }
 
+    public static final String FONTAWESOME_FILENAME = "fontawesome-webfont.ttf";
 }

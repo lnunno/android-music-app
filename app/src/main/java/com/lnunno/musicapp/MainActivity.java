@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
         ListView hot_artist_view = (ListView) findViewById(R.id.hotartists_listview);
         ArtistAdapter artistAdapter = new ArtistAdapter(this);
         hot_artist_view.setAdapter(artistAdapter);
-        new RetrieveArtistsTask(artistAdapter).execute(EchoNestParameterSets.hotArtistsParameters(10));
+        new RetrieveArtistsTask(artistAdapter).execute(EchoNestParameterSets.hotArtistsParams(10));
     }
 
 

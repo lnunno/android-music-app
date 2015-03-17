@@ -1,5 +1,5 @@
 # Personify
-![](https://github.com/lnunno/personify/blob/master/images/ic_launcher/web_hi_res_512.png)
+<a href="https://github.com/lnunno/personify/blob/master/images/ic_launcher/web_hi_res_512.png"><img src="https://github.com/lnunno/personify/blob/master/images/ic_launcher/web_hi_res_512.png" width="128" height="128"></a> 
 
 Prototype music discovery application for Android. Uses the Echo Nest java API along with Google Guava.
 

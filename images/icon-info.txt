@@ -1,0 +1,2 @@
+Created on Android Asset Studio:
+http://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.space.trim=1&foreground.space.pad=0.1&foreground.clipart=res%2Fclipart%2Ficons%2Fav_my_library_music.svg&foreColor=2e3235%2C0&crop=0&backgroundShape=square&backColor=84bd00%2C100&effects=shadow

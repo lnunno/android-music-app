@@ -6,7 +6,7 @@
 
     <!-- Icon dimensions. -->
     <dimen name="list_icon_size">48dp</dimen>
-    <dimen name="list_icon_padding">8dp</dimen>
+    <dimen name="list_icon_padding">2dp</dimen>
 
     <dimen name="medium_text">18sp</dimen>
 </resources>

@@ -24,4 +24,6 @@ public class Constants {
     }
 
     public static final String FONTAWESOME_FILENAME = "fontawesome-webfont.ttf";
+
+    public static final int ARTIST_ID_TAG = "ArtistID".hashCode();
 }

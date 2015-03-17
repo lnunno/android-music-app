@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.echonest.api.v4.Artist;
+import com.lnunno.musicapp.Constants;
 import com.lnunno.musicapp.EchoNestUtils;
 import com.lnunno.musicapp.R;
 
@@ -49,6 +50,7 @@ public class ArtistAdapter extends TrackerAdapter<Artist> {
         String artistName = EchoNestUtils.safeGetName(artist);
         EchoNestUtils.setArtistImageView(artist, imageView);
         textView.setText(artistName);
+        artistListView.setTag(Constants.ARTIST_ID_TAG, artist.getID());
         artistViews.add(position, artistListView);
         return artistListView;
     }

@@ -8,7 +8,7 @@ import com.echonest.api.v4.EchoNestException;
 
 import java.util.List;
 
-import static com.lnunno.musicapp.Constants.EN; // We want direct access to the API.
+import static com.lnunno.musicapp.Constants.EN;
 
 /**
  * Created by Lucas on 3/14/2015.

@@ -1,7 +1,6 @@
 package com.lnunno.musicapp;
 
 import com.echonest.api.v4.EchoNestAPI;
-import com.lnunno.musicapp.Secret;
 
 /**
  * Created by Lucas on 3/14/2015.

@@ -7,7 +7,7 @@ import com.echonest.api.v4.Artist;
 import com.echonest.api.v4.ArtistParams;
 import com.echonest.api.v4.EchoNestException;
 import com.lnunno.musicapp.EchoNestUtils;
-import com.lnunno.musicapp.components.ArtistAdapter;
+import com.lnunno.musicapp.adapters.ArtistAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

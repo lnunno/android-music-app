@@ -4,16 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.echonest.api.v4.Artist;
-import com.echonest.api.v4.EchoNestException;
-import com.lnunno.musicapp.components.ArtistAdapter;
+import com.lnunno.musicapp.adapters.ArtistAdapter;
 import com.lnunno.musicapp.tasks.RetrieveArtistsTask;
-
-import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 

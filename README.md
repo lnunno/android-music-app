@@ -11,9 +11,13 @@ Love music? Love being up to date? Personify helps you stay up to date with the 
 ### Core features
 1. Interacts with the Echo Nest API.
 2. Has a list of genres.
+  1. Selecting a genre lists top artists for that genre.
 3. Has a list of artists.
+  1. Selecting an artist goes to the artist overview.
 4. Can search for artists.
-5. Artist features:
+  1. Search uses text entered by the user.
+  2. Results show most relevant artists based on the user's query.
+5. Artist features (Artist overview):
   1. List of artist biographies.
   2. List of artist news.
   3. List of artist events.

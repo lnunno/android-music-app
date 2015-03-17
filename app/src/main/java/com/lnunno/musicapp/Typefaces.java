@@ -22,7 +22,7 @@ public class Typefaces {
 
     private Typefaces() {
     }
-    
+
     public static Typeface get(Context c, String assetPath) {
         synchronized (cache) {
             if (!cache.containsKey(assetPath)) {

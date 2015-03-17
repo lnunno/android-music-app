@@ -12,12 +12,15 @@ import com.lnunno.musicapp.adapters.ArtistAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.lnunno.musicapp.Constants.EN;
+
 /**
  * Created by Lucas on 3/14/2015.
  */
 public class RetrieveArtistsTask extends AsyncTask<ArtistParams, Integer, List<Artist>> {
 
     private ArtistAdapter artistAdapter;
+
 
     public RetrieveArtistsTask(ArtistAdapter adapter) {
         this.artistAdapter = adapter;
@@ -26,7 +29,7 @@ public class RetrieveArtistsTask extends AsyncTask<ArtistParams, Integer, List<A
     @Override
     protected List<Artist> doInBackground(ArtistParams... params) {
         try {
-            return EchoNestUtils.getHotArtists(100);
+            return EN.searchArtists(params[0]);
         } catch (EchoNestException e) {
             Log.e("ARTIST", e.getMessage());
             e.printStackTrace();

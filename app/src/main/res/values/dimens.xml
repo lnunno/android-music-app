@@ -9,4 +9,7 @@
     <dimen name="list_icon_padding">4dp</dimen>
 
     <dimen name="medium_text">18sp</dimen>
+
+    <dimen name="drawer_icon_size">60dp</dimen>
+    <dimen name="drawer_icon_padding">4dp</dimen>
 </resources>

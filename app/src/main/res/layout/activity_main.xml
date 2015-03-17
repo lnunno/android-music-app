@@ -35,5 +35,6 @@ The first element is the content view and the second element is the navigation d
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
-        android:background="#111" />
+        android:background="#111"
+        />
 </android.support.v4.widget.DrawerLayout>

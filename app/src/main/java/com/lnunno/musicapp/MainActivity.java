@@ -53,7 +53,7 @@ public class MainActivity extends ActionBarActivity {
             drawerElementList.add(new DrawerElement(s,drawable));
         }
         ListView drawerList = (ListView) findViewById(R.id.left_drawer);
-        drawerList.setAdapter(new DrawerAdapter(this,drawerElementList));
+        drawerList.setAdapter(new ArrayAdapter<String>(this,R.layout.drawer_element, R.id.drawer_item_text, drawerItems));
     }
 
 

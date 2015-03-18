@@ -19,5 +19,6 @@
         android:layout_toRightOf="@+id/drawer_item_icon"
         android:text="@string/default_drawer_item_text"
         android:textSize="@dimen/medium_text"
+        android:textColor="@color/white"
         />
 </RelativeLayout>

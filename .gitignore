@@ -6,3 +6,4 @@
 /build
 Secret.java
 secret.py
+*.pyc

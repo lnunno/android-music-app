@@ -17,8 +17,10 @@ class Personify(object):
     '''
     Main index page.
     '''
+    @cherrypy.expose
     def index(self):
         template = env.get_template('index.html')
+        return template.render()
         
     @cherrypy.expose(alias='404')
     def not_found(self, status, message, traceback, version):

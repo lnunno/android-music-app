@@ -1,6 +1,23 @@
-# Paper prototype study
+# Paper prototype study for Personify
+By: Lucas Nunno
+
+**Date:** March 24th 2015
 
 ## Script
 * Try to search for your favorite artist, how easy or difficult is this to do?
+* Look at the results for your search. Is the information here what you'd expect? Is there anything else you'd like to see here?
 * Go to the artist page. What kind of information would you like to see here? Is what's here useful to you?
+* Go to the artist's recent news and then go to the biography list, does this navigation make sense to you? Is there anything that would make it easier?
 
+
+# User 1
+* 23, Female.
+* Has used music software before.
+
+# User 2
+* 54, Female.
+* Has not used many different types of music software.
+
+# User 3
+* 24, Male.
+* Very tech-savvy. Has used a lot of music software in the past.

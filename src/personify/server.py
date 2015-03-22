@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 '''
 Created on Mar 21, 2015
@@ -20,6 +20,16 @@ class Personify(object):
     @cherrypy.expose
     def index(self):
         template = env.get_template('index.html')
+        return template.render()
+    
+    @cherrypy.expose
+    def top_artists(self):
+        template = env.get_template('top_artists.html')
+        return template.render()
+    
+    @cherrypy.expose
+    def genres(self):
+        template = env.get_template('genres.html')
         return template.render()
         
     @cherrypy.expose(alias='404')

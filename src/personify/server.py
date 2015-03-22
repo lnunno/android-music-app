@@ -8,17 +8,20 @@ Created on Mar 21, 2015
 import cherrypy
 from personify.constants import BASE_DIR
 from personify.jinja_init import env
+from pyechonest.artist import Artist
+from pyechonest import config
+from personify import secret
 
 class Personify(object):
     
     def __init__(self):
-        pass
+        config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
     
-    '''
-    Main index page.
-    '''
     @cherrypy.expose
     def index(self):
+        '''
+        Main index page.
+        '''
         template = env.get_template('index.html')
         return template.render()
     
@@ -26,6 +29,15 @@ class Personify(object):
     def top_artists(self):
         template = env.get_template('top_artists.html')
         return template.render()
+    
+    @cherrypy.expose
+    def artist(self, name):
+        '''
+        @param name: The name of the artist.
+        '''
+        template = env.get_template('artist.html')
+        artist = Artist(name)
+        template.render(artist=artist)
     
     @cherrypy.expose
     def genres(self):

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Personify - Top {{num_top_artists}} Artists{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Today's Top {{num_top_artists}} Artists</h1>
+{{elements.artists_media_list(top_artist_list)}}
+</div>
+{% endblock %}

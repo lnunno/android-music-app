@@ -40,7 +40,7 @@ class Personify(object):
         '''
         template = env.get_template('artist.html')
         artist = Artist(name)
-        template.render(artist=artist)
+        return template.render(artist=artist)
         
     @cherrypy.expose
     def search(self, search_term):

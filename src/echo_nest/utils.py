@@ -6,8 +6,14 @@ Created on Mar 21, 2015
 from pyechonest import config
 from personify import secret
 from personify.constants import PLACEHOLDER_ARTIST_IMAGE
+import pyen
+from echo_nest.buckets import genre_list_buckets
+
+en = None
 
 def init():
+    global en
+    en = pyen.Pyen(api_key=secret.ECHO_NEST_API_KEY)
     config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
     
 def truncate_text(text,num_char=80):
@@ -27,5 +33,9 @@ def get_brief_bio(artist):
     bio = artist.biographies[0]
     bio_text = bio['text']
     return truncate_text(bio_text,400)
+
+def get_genre_list():
+    response = en.get('genre/list', bucket=genre_list_buckets)  
+    return response['genres']
     
 init()

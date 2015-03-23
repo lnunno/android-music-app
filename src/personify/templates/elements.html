@@ -13,7 +13,7 @@ See: http://getbootstrap.com/components/#media
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{artist.name}}</h4>
+      <h4 class="media-heading"><a href="/artist?name={{artist.name}}">{{artist.name}}</a></h4>
       <p>{{echonest_util.get_brief_bio(artist)}}</p>
     </div>
 </li>

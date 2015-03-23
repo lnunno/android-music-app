@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Personify - Search Results{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Search Results</h1>
+{{elements.artists_media_list(results)}}
+</div>
+{% endblock %}

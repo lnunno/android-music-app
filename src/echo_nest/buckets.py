@@ -22,4 +22,5 @@ URLS='urls'
 VIDEO='video'
 YEARS_ACTIVE='years_active'
 top_artist_buckets=[HOTTTNESSS_RANK,BIOGRAPHIES,IMAGES]
+search_artist_buckets=top_artist_buckets
 artist_buckets=[BIOGRAPHIES,BLOGS,GENRE,HOTTTNESSS_RANK,IMAGES,ARTIST_LOCATION,NEWS,REVIEWS,YEARS_ACTIVE]

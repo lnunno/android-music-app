@@ -5,6 +5,7 @@ Created on Mar 21, 2015
 '''
 from pyechonest import config
 from personify import secret
+from personify.constants import PLACEHOLDER_ARTIST_IMAGE
 
 def init():
     config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
@@ -14,9 +15,15 @@ def truncate_text(text,num_char=80):
     return text
 
 def get_artist_display_image(artist):
+    image_ls = artist.images
+    if len(image_ls) == 0:
+        return PLACEHOLDER_ARTIST_IMAGE
     return artist.images[0]['url']
 
 def get_brief_bio(artist):
+    biography_ls = artist.biographies
+    if len(biography_ls) == 0:
+        return ''
     bio = artist.biographies[0]
     bio_text = bio['text']
     return truncate_text(bio_text,400)

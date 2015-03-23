@@ -11,7 +11,7 @@ from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
 from personify import secret
-from echo_nest.buckets import top_artist_buckets
+from echo_nest.buckets import top_artist_buckets, search_artist_buckets
 
 class Personify(object):
     
@@ -30,7 +30,7 @@ class Personify(object):
     def top_artists(self):
         template = env.get_template('top_artists.html')
         num_top_artists = 20
-        top_artist_list = artist.top_hottt(results=num_top_artists,buckets=top_artist_buckets)
+        top_artist_list = artist.top_hottt(results=num_top_artists, buckets=top_artist_buckets)
         return template.render(top_artist_list=top_artist_list, num_top_artists=num_top_artists)
     
     @cherrypy.expose
@@ -41,6 +41,12 @@ class Personify(object):
         template = env.get_template('artist.html')
         artist = Artist(name)
         template.render(artist=artist)
+        
+    @cherrypy.expose
+    def search(self, search_term):
+        template = env.get_template('search.html')
+        results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
+        return template.render(results=results,search_term=search_term)
     
     @cherrypy.expose
     def genres(self):

@@ -17,6 +17,7 @@ By: Lucas Nunno
 * Has used music software before.
 
 ## Comments from user 1
+It's ugly! Needs more color, other than that it looks good. Usable at least. Searching is easy, but the icon button is a little confusing to click, not sure if it continues the search.
 
 # User 2
 * 54, Female.

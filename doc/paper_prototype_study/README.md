@@ -41,6 +41,7 @@ The changes made were mocked up, but need to be implemented into the app itself.
 * Changed the UI to be more colorful.
 * Made search bar smaller in responsive navbar.
 
+# **Part 3** (revision)
 # User 1
 
 ## Comments from user 1
@@ -52,5 +53,3 @@ The changes made were mocked up, but need to be implemented into the app itself.
 # User 3
 
 ## Comments from user 3
-
-# **Part 3** (revision)

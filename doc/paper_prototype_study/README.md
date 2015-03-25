@@ -16,9 +16,14 @@ By: Lucas Nunno
 * 23, Female.
 * Has used music software before.
 
+## Comments from user 1
+
 # User 2
 * 54, Female.
 * Has not used many different types of music software.
+
+## Comments from user 2
+
 
 # User 3
 * 24, Male.
@@ -28,5 +33,23 @@ By: Lucas Nunno
 Icons might be helpful. UI looks a little bland and too gray, although it does look modern. Icons might be helpful. Only two navbar items might be too little to be worth it. User was able to search easily, used enter key to execute search query. User was able to find link to artist easily, they mentioned that more artist info on search results might be helpful.
 
 # **Part 2** (what changed)
+
+The changes made were mocked up, but need to be implemented into the app itself. Users were shown proposed changes as a paper prototype and the original app.
+
+*Following changes:*
+* Changed the UI to be more colorful.
+* Made search bar smaller in responsive navbar.
+
+# User 1
+
+## Comments from user 1
+
+# User 2
+
+## Comments from user 2
+
+# User 3
+
+## Comments from user 3
 
 # **Part 3** (revision)

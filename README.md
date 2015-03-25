@@ -3,7 +3,7 @@
 
 Prototype music discovery application for Android. Uses the Echo Nest java API along with Google Guava.
 
-Update: See the python branch for web app.
+**Update:** See the python branch for the web app. **The Android branch is no longer in active development, please see the python branch for the actual application.**
 
 ## Description
 Love music? Love being up to date? Personify helps you stay up to date with the latest happenings involving your favorite artists. It also helps you learn the rich history behind your favorite music acts. Learn about where your favorite artists came from to give you an idea of where they’re going. Includes biographies, news, and blogs about the artists you love to keep you up to date when something new hits.

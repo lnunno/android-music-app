@@ -18,6 +18,10 @@ By: Lucas Nunno
 * Heavy Android user
 
 ## Comments from user 1
+Start page is bare, it doesn't get me interested in anything. It doesn't remind me of music. I don't want to read any of it.
+
+I would like to see albums of the artist. The picture for the artist doesn't make sense. When you're searching for something only the **one thing** that you want should show up, everything else sucks. I want to see all the albums, I want to click on it and play it. I could just go to Wikipedia for that...
+
 It's ugly! Needs more color, other than that it looks good. Usable at least. Searching is easy, but the icon button is a little confusing to click, not sure if it continues the search.
 
 Likes seeing the artist bio information in search.
@@ -34,6 +38,7 @@ Artist page may be a bit too complicated. Found it hard to find some information
 # User 3
 * 24, Male.
 * Very tech-savvy. Has used a lot of music software in the past.
+* Heavy Android user
 
 ## Comments from user 3
 Icons might be helpful. UI looks a little bland and too gray, although it does look modern. Icons might be helpful. Only two navbar items might be too little to be worth it. User was able to search easily, used enter key to execute search query. User was able to find link to artist easily, they mentioned that more artist info on search results might be helpful.
@@ -50,6 +55,7 @@ The changes made were mocked up, but need to be implemented into the app itself.
 # User 1
 
 ## Comments from user 1
+
 
 # User 2
 

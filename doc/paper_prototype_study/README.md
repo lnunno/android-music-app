@@ -29,6 +29,7 @@ Likes seeing the artist bio information in search.
 # User 2
 * 54, Female.
 * Has not used many different types of music software.
+* Light Android user
 
 ## Comments from user 2
 Likes the interface, thinks there could be more information on the page. Not much info to get started. Would like some sort of tutorial. Took a second to find the search bar, but ah, that makes sense. The icon was helpful. Searching was easy. The results were what she expected, but there were some results that didn't look quite right. This is mainly due to the dataset used.

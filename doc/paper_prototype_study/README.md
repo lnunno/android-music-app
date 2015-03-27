@@ -53,14 +53,29 @@ The changes made were mocked up, but need to be implemented into the app itself.
 
 # **Part 3** (revision)
 # User 1
+* 21, Male.
+* Used some music software in the past
+* Moderate Android User
 
 ## Comments from user 1
-
+Splash page is boring doesn't remind me of music. Search works ok.
 
 # User 2
+* 29, Female.
+* iOS user
+* Uses Pandora
 
 ## Comments from user 2
+Likes that you can find out information on artists. Searching works pretty well. Really likes the top artists. Likes the pictures next to the artists. More graphics would be nice.
 
 # User 3
+* 65, Male.
+* Flip phone user
+* Uses the radio for music
+* Used to browsing websites.
 
 ## Comments from user 3
+Thinks the splash page needs more information about what the app's about. Likes the navbar. Color is nice. Dropdown is neat.
+
+Search bar is too tiny, hard to read with old eyes, needs a way to make bigger. Likes the artist information, although the information for artists they like isn't always up to date, the photos aren't the best.
+

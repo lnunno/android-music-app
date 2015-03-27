@@ -15,16 +15,21 @@ By: Lucas Nunno
 # User 1
 * 23, Female.
 * Has used music software before.
+* Heavy Android user
 
 ## Comments from user 1
 It's ugly! Needs more color, other than that it looks good. Usable at least. Searching is easy, but the icon button is a little confusing to click, not sure if it continues the search.
+
+Likes seeing the artist bio information in search.
 
 # User 2
 * 54, Female.
 * Has not used many different types of music software.
 
 ## Comments from user 2
+Likes the interface, thinks there could be more information on the page. Not much info to get started. Would like some sort of tutorial. Took a second to find the search bar, but ah, that makes sense. The icon was helpful. Searching was easy. The results were what she expected, but there were some results that didn't look quite right. This is mainly due to the dataset used.
 
+Artist page may be a bit too complicated. Found it hard to find some information.
 
 # User 3
 * 24, Male.

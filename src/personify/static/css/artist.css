@@ -1,0 +1,13 @@
+.artist-img {
+    height:250px;
+    overflow: hidden;
+}
+
+.artist-detail{ 
+	font-size: 30px;
+}
+
+.artist-detail small{ 
+	font-size: 65%;
+	color: #777;	
+}

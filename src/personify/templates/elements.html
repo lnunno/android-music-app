@@ -26,3 +26,36 @@ See: http://getbootstrap.com/components/#media
     {% endfor %}
 </ul>
 {% endmacro %}
+
+{% macro artist_overview(artist) %}
+{% endmacro %}
+
+{% macro artist_bios_list(artist)%}
+<ul class="media-list">
+    {% for bio in artist.biographies %}
+    <li class="media">
+        <div class="media-body">
+          <h4 class="media-heading"><a href="{{bio['url']}}">{{bio['site']}}</a></h4>
+          <p>{{echonest_util.truncate_bio(bio['text'])}}</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro artist_news_list(artist) %}
+<ul class="media-list">
+    {% for story in artist.news %}
+    <li class="media">
+        <div class="media-body">
+          <h4 class="media-heading"><a href="{{story['url']}}">{{story['name']}}</a></h4>
+          <span class="label label-primary"><i class="fa fa-calendar"></i> {{echonest_util.pretty_date(story['date_found'])}} </span>
+          <p>{{story['summary']}}</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro artist_blogs_list(artist) %}
+{% endmacro %}

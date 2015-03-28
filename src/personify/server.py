@@ -11,7 +11,8 @@ from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
 from personify import secret
-from echo_nest.buckets import top_artist_buckets, search_artist_buckets
+from echo_nest.buckets import top_artist_buckets, search_artist_buckets,\
+    artist_buckets
 
 class Personify(object):
     
@@ -39,7 +40,7 @@ class Personify(object):
         @param name: The name of the artist.
         '''
         template = env.get_template('artist.html')
-        artist = Artist(name)
+        artist = Artist(name, buckets=artist_buckets)
         return template.render(artist=artist)
         
     @cherrypy.expose

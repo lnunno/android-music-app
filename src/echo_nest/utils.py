@@ -8,6 +8,7 @@ from personify import secret
 from personify.constants import PLACEHOLDER_ARTIST_IMAGE
 import pyen
 from echo_nest.buckets import genre_list_buckets
+from datetime import datetime
 
 en = None
 
@@ -19,6 +20,10 @@ def init():
 def truncate_text(text,num_char=80):
     text = (text[:num_char] + '...') if len(text) > num_char else text
     return text
+
+def truncate_bio(text):
+    return truncate_text(text, num_char=400)
+    
 
 def get_artist_display_image(artist):
     image_ls = artist.images
@@ -37,5 +42,10 @@ def get_brief_bio(artist):
 def get_genre_list():
     response = en.get('genre/list', bucket=genre_list_buckets)  
     return response['genres']
+
+def pretty_date(date_str):
+    dt = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S')
+    return dt.strftime('%a %b %d, %Y')
+    
     
 init()

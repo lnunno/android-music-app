@@ -46,6 +46,11 @@ def get_genre_list():
 def pretty_date(date_str):
     dt = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S')
     return dt.strftime('%a %b %d, %Y')
+
+def pretty_score(score_num):
+    score_num = score_num*100
+    score_num = int(score_num)
+    return '%d%%' % (score_num)
     
     
 init()

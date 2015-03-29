@@ -6,14 +6,15 @@ Create an artist media element.
 See: http://getbootstrap.com/components/#media
 #}
 {% macro artist_list_element(artist) %}
+{% set artist_link = '/artist?name='~artist.name %}
 <li class="media">
     <div class="media-left">
-      <a href="#">
+      <a href="{{artist_link}}">
         <img class="media-object" src="{{echonest_util.get_artist_display_image(artist)}}" height="64" width="64">
       </a>
     </div>
     <div class="media-body">
-      <h4 class="media-heading"><a href="/artist?name={{artist.name}}">{{artist.name}}</a></h4>
+      <h4 class="media-heading"><a href="{{artist_link}}">{{artist.name}}</a></h4>
       <p>{{echonest_util.get_brief_bio(artist)}}</p>
     </div>
 </li>

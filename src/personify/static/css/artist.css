@@ -1,6 +1,7 @@
+.artist-img-holder{overflow: hidden;}
+
 .artist-img {
     height:250px;
-    overflow: hidden;
 }
 
 .artist-detail{ 

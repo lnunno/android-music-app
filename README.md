@@ -35,7 +35,7 @@ Key:
   4. ~~Contains artist familiarity score.~~
   3. *List of artist events.*
   4. *Shows artist photos.*
-  5. *Has a link to the artist’s official twitter (if exists).*
+  5. ~~*Has a link to the artist’s official twitter (if exists).*~~
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration

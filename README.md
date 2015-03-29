@@ -28,9 +28,9 @@ Key:
   2. ~~List of artist news.~~
      1. ~~Shows the date the news article was published.~~
      2. ~~Has a link to the site with the news article.~~
-  3. List of artist blogs.
-      1. Shows date the blog was published.
-      2. Has a link to the original blog.
+  3. ~~List of artist blogs.~~
+      1. ~~Shows date the blog was published.~~
+      2. ~~Has a link to the original blog.~~
   3. ~~Contains artist hotttnesss score.~~
   4. ~~Contains artist familiarity score.~~
   3. *List of artist events.*

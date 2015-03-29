@@ -20,7 +20,7 @@ Key:
   1. Selecting a genre lists top artists for that genre.
 3. ~~Has a list of artists. (Top 20 artists)~~
   1. ~~Selecting an artist goes to the artist overview.~~
-4. Can search for artists.
+4. ~~Can search for artists.~~
   1. ~~Search uses text entered by the user.~~
   2. ~~Results show most relevant artists based on the user's query.~~
 5. Artist features (Artist overview):
@@ -30,6 +30,9 @@ Key:
      2. ~~Has a link to the site with the news article.~~
   3. List of artist blogs.
       1. Shows date the blog was published.
+      2. Has a link to the original blog.
+  3. ~~Contains artist hotttnesss score.~~
+  4. ~~Contains artist familiarity score.~~
   3. *List of artist events.*
   4. *Shows artist photos.*
   5. *Has a link to the artist’s official twitter (if exists).*

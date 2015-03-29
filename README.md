@@ -10,22 +10,29 @@ Love music? Love being up to date? Personify helps you stay up to date with the 
 
 ## Proposed features
 
+Key:
+* ~~Implemented~~
+* *Nice to have, but not essential*
+
 ### Core features
-1. Interacts with the Echo Nest API.
+1. ~~Interacts with the Echo Nest API.~~
 2. Has a list of genres.
   1. Selecting a genre lists top artists for that genre.
-3. Has a list of artists.
-  1. Selecting an artist goes to the artist overview.
+3. ~~Has a list of artists. (Top 20 artists)~~
+  1. ~~Selecting an artist goes to the artist overview.~~
 4. Can search for artists.
-  1. Search uses text entered by the user.
-  2. Results show most relevant artists based on the user's query.
+  1. ~~Search uses text entered by the user.~~
+  2. ~~Results show most relevant artists based on the user's query.~~
 5. Artist features (Artist overview):
-  1. List of artist biographies.
-  2. List of artist news.
-  3. List of artist events.
-  4. Shows artist photos.
-  5. Has a link to the artist’s official twitter (if exists).
-6. Remembers the screen that you were on previously in the app when exiting and re-entering.
+  1. ~~List of artist biographies.~~
+  2. ~~List of artist news.~~
+     1. ~~Shows the date the news article was published.~~
+     2. ~~Has a link to the site with the news article.~~
+  3. List of artist blogs.
+      1. Shows date the blog was published.
+  3. *List of artist events.*
+  4. *Shows artist photos.*
+  5. *Has a link to the artist’s official twitter (if exists).*
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration

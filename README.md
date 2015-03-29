@@ -6,3 +6,13 @@ This is an experimental branch for creating a Python web application for Personi
 * jinja2
 * pyechonest
 * pyen
+
+## Setup
+
+Make sure pip is installed
+
+    sudo apt-get install python-pip
+    
+Install packages
+
+    sudo pip install pyechonest cherrypy jinja2 pylast spotipy pyen

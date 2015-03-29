@@ -16,3 +16,10 @@ Make sure pip is installed
 Install packages
 
     sudo pip install pyechonest cherrypy jinja2 pylast spotipy pyen
+    
+## Running
+
+    cd personify/src
+    export PYTHONPATH=$PWD:$PYTHONPATH
+    cd personify
+    ./server.py

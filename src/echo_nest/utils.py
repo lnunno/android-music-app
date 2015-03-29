@@ -5,7 +5,6 @@ Created on Mar 21, 2015
 '''
 from pyechonest import config
 from personify import secret
-from personify.constants import PLACEHOLDER_ARTIST_IMAGE
 import pyen
 from echo_nest.buckets import genre_list_buckets
 from datetime import datetime
@@ -23,12 +22,12 @@ def truncate_text(text,num_char=80):
 
 def truncate_bio(text):
     return truncate_text(text, num_char=400)
-    
 
-def get_artist_display_image(artist):
+def get_artist_display_image(artist, placeholder_size=64):
     image_ls = artist.images
     if len(image_ls) == 0:
-        return PLACEHOLDER_ARTIST_IMAGE
+        placeholder_image = 'http://placehold.it/%d&text=No+Artist+Image+Available' % (placeholder_size)
+        return placeholder_image
     return artist.images[0]['url']
 
 def get_brief_bio(artist):

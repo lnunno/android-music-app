@@ -49,7 +49,10 @@ See: http://getbootstrap.com/components/#media
     <li class="media">
         <div class="media-body">
           <h4 class="media-heading"><a href="{{story['url']}}">{{story['name']}}</a></h4>
-          <span class="label label-primary"><i class="fa fa-calendar"></i> {{echonest_util.pretty_date(story['date_found'])}} </span>
+          {% set date_str = story['date_found'] %}
+          {% if date_str|length > 0 %}
+          <span class="label label-primary"><i class="fa fa-calendar"></i> {{echonest_util.pretty_date(date_str)}} </span>
+          {% endif %}
           <p>{{story['summary']}}</p>
         </div>
     </li>
@@ -58,4 +61,18 @@ See: http://getbootstrap.com/components/#media
 {% endmacro %}
 
 {% macro artist_blogs_list(artist) %}
+<ul class="media-list">
+    {% for b in artist.blogs %}
+    <li class="media">
+        <div class="media-body">
+          <h4 class="media-heading"><a href="{{b['url']}}">{{b['name']}}</a></h4>
+          {% set date_str = b['date_posted'] %}
+          {% if date_str|length > 0 %}
+          <span class="label label-primary"><i class="fa fa-calendar"></i> {{echonest_util.pretty_date(date_str)}} </span>
+          {% endif %}
+          <p>{{b['summary']}}</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 {% endmacro %}

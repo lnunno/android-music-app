@@ -13,11 +13,23 @@
 <div class="media">
   <div class="media-left">
     <a href="#">
-      <img class="artist-img" src="{{echonest_util.get_artist_display_image(artist)}}">
+      <img class="artist-img" src="{{echonest_util.get_artist_display_image(artist,placeholder_size=250)}}">
     </a>
   </div>
   <div class="media-body">
     <ul class="media-list">
+        {% set twitter_handle = artist.get_twitter_id() %}
+        {% if twitter_handle %}
+        {% set twitter_profile_url = 'https://twitter.com/' ~ twitter_handle %}
+        <li class="media">
+            <div class="media-left artist-detail">
+                <i class="fa fa-fw fa-twitter" style="color: #55acee;"></i>
+            </div>
+            <div class="media-body artist-detail">
+                <a href="{{twitter_profile_url}}" class="btn btn-primary">See <strong>@{{twitter_handle}}</strong> on Twitter</a>
+            </div>
+        </li>
+        {% endif %}
         <li class="media">
             <div class="media-left artist-detail">
                 <i class="fa fa-fw fa-fire" style="color:orange;"></i>
@@ -60,7 +72,7 @@
             </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="blogs">
-            <div class="padding-top:10px">
+            <div style="padding-top:10px">
                 {{elements.artist_blogs_list(artist)}}    
             </div>
         </div>

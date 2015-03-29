@@ -22,4 +22,7 @@ Install packages
     cd personify/src
     export PYTHONPATH=$PWD:$PYTHONPATH
     cd personify
+
+Create a Python source file `secret.py` and place your Echo Nest API key here as a variable named `ECHO_NEST_API_KEY`. Then run.
+    
     ./server.py

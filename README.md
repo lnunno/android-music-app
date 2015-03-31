@@ -39,7 +39,11 @@ Key:
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration
-  1. Syncs saved/followed artists across Personify and Spotify.
+  1. Users can link their Spotify accounts.
+  2. Syncs saved/followed artists across Personify and Spotify.
+  3. Can play top songs from an artist through Spotify.
+2. Last.fm integration
+  1. Users can link their Last.fm accounts.
 
 ## Interface design proposal
 **Note:** The final product will differ, these are initial interface ideas and sketches using the draw.io mockup tool.

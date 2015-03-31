@@ -44,6 +44,7 @@ Key:
   3. Can play top songs from an artist through Spotify.
 2. Last.fm integration
   1. Users can link their Last.fm accounts.
+  2. Users see number of scrobbles for the artist when they go to the artist page.
 
 ## Interface design proposal
 **Note:** The final product will differ, these are initial interface ideas and sketches using the draw.io mockup tool.

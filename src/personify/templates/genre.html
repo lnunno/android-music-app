@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Personify - Top Artists for {{name}} Genre{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h1>Top Artists for {{name}} Genre</h1>
+	{{elements.display_genre_detail(artist_list)}}
+</div>
+{% endblock %}

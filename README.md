@@ -5,7 +5,7 @@ This is an experimental branch for creating a Python web application for Personi
 * cherrypy
 * jinja2
 * pyechonest
-* pyen
+* pyen -- Used where pyechonest does not have API bindings (mainly genres)
 
 ## Setup
 

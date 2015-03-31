@@ -11,8 +11,9 @@ from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
 from personify import secret
-from echo_nest.buckets import top_artist_buckets, search_artist_buckets,\
+from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
     artist_buckets
+from echo_nest.utils import get_genre_list, get_genre_by_name
 
 class Personify(object):
     
@@ -47,12 +48,18 @@ class Personify(object):
     def search(self, search_term):
         template = env.get_template('search.html')
         results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
-        return template.render(results=results,search_term=search_term)
+        return template.render(results=results, search_term=search_term)
     
     @cherrypy.expose
     def genres(self):
         template = env.get_template('genres.html')
-        return template.render()
+        genre_list = get_genre_list()
+        return template.render(genre_list=genre_list)
+    
+    def genre(self, name):
+        template = env.get_template('genre.html')
+        artist_list = get_genre_by_name(name)
+        return template.render(name=name, artist_list=artist_list)
         
     @cherrypy.expose(alias='404')
     def not_found(self, status, message, traceback, version):

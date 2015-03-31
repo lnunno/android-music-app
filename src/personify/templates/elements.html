@@ -77,3 +77,19 @@ See: http://getbootstrap.com/components/#media
     {% endfor %}
 </ul>
 {% endmacro %}
+
+
+{% macro display_genre_list(genre_list) %}
+<ul class="media-list">
+  {% for genre in genre_list %}
+  {% set genre_name = genre['name'] %}
+  {% set genre_description = genre['description'] %}
+  <li class="media">
+    <div class="media-body">
+      <h4 class="media-heading"><a href="/genre?name={{genre_name}}">{{genre_name}}</a></h4>
+      <p>{{genre_description}}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}

@@ -16,8 +16,6 @@ Key:
 
 ### Core features
 1. ~~Interacts with the Echo Nest API.~~
-2. Has a list of genres.
-  1. Selecting a genre lists top artists for that genre.
 3. ~~Has a list of artists. (Top 20 artists)~~
   1. ~~Selecting an artist goes to the artist overview.~~
 4. ~~Can search for artists.~~
@@ -36,6 +34,8 @@ Key:
   3. *List of artist events.*
   4. *Shows artist photos.*
   5. ~~*Has a link to the artist’s official twitter (if exists).*~~
+6. *Has a list of genres.*
+  1. *Selecting a genre lists top artists for that genre.*
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration

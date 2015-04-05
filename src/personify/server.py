@@ -6,16 +6,18 @@ Created on Mar 21, 2015
 @author: lnunno
 '''
 import cherrypy
-from personify.constants import BASE_DIR
+from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX
 from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
 from personify import secret
 from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
-    artist_buckets
-from echo_nest.utils import get_genre_list, get_genre_by_name
+    artist_buckets, genre_list_buckets
+from echo_nest.utils import get_genre_list, get_genre_by_name, en
 
 class Personify(object):
+    
+    __version__ = '0.4.0'
     
     def __init__(self):
         config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
@@ -47,15 +49,24 @@ class Personify(object):
     @cherrypy.expose
     def search(self, search_term):
         template = env.get_template('search.html')
-        results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
-        return template.render(results=results, search_term=search_term)
+        search_type = 'artists'
+        if search_term.startswith(GENRE_SEARCH_PREFIX):
+            # Genre search
+            genre_search_term = search_term[len(GENRE_SEARCH_PREFIX):]
+            results = en.get('genre/search', name=genre_search_term, bucket=genre_list_buckets)['genres']
+            search_type = 'genres'
+        else:
+            results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
+        return template.render(results=results, search_term=search_term, search_type=search_type)
     
     @cherrypy.expose
-    def genres(self):
+    def genres(self, page=0):
+        page = int(page)
         template = env.get_template('genres.html')
-        genre_list = get_genre_list()
-        return template.render(genre_list=genre_list)
+        genre_list = get_genre_list(page)
+        return template.render(genre_list=genre_list, page=page)
     
+    @cherrypy.expose
     def genre(self, name):
         template = env.get_template('genre.html')
         artist_list = get_genre_by_name(name)
@@ -69,6 +80,7 @@ class Personify(object):
 if __name__ == '__main__':
     
     instance = Personify()
+    env.globals.update(__version__=Personify.__version__)  # @UndefinedVariable
     
     config = {
               '/':{

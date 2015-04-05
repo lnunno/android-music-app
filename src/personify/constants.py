@@ -6,3 +6,5 @@ Created on Mar 21, 2015
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+NUM_GENRE_RESULTS_PER_PAGE = 5
+GENRE_SEARCH_PREFIX = 'genre:'

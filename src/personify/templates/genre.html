@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container">
-	<h1>Top Artists for {{name}} Genre</h1>
+	<h1>Top <em>{{name.title()}}</em> Artists</h1>
 	{{elements.display_genre_detail(artist_list)}}
 </div>
 {% endblock %}

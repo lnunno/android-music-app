@@ -4,5 +4,11 @@
 {% block content %}
 <div class="container">
 	{{elements.display_genre_list(genre_list)}}
+	<nav>
+	  <ul class="pager">
+	    <li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="/genres?page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+	    <li class="next"><a href="/genres?page={{page+1}}">Next <span aria-hidden="true">&rarr;</span></a></li>
+	  </ul>
+	</nav>
 </div>
 {% endblock %}

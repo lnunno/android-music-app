@@ -8,6 +8,7 @@ from personify import secret
 import pyen
 from echo_nest.buckets import genre_list_buckets, artist_buckets
 from datetime import datetime
+from personify.constants import NUM_GENRE_RESULTS_PER_PAGE
 
 en = None
 
@@ -24,22 +25,32 @@ def truncate_bio(text):
     return truncate_text(text, num_char=400)
 
 def get_artist_display_image(artist, placeholder_size=64):
-    image_ls = artist.images
+    if not hasattr(artist, 'images') and not artist.has_key('images'):
+        return None # Not an object with images.
+    if isinstance(artist, dict):
+        image_ls = artist['images']
+    else:
+        image_ls = artist.images
     if len(image_ls) == 0:
         placeholder_image = 'http://placehold.it/%d&text=No+Artist+Image+Available' % (placeholder_size)
         return placeholder_image
-    return artist.images[0]['url']
+    return image_ls[0]['url']
 
 def get_brief_bio(artist):
-    biography_ls = artist.biographies
+    if isinstance(artist, dict):
+        biography_ls = artist['biographies']
+    else:
+        biography_ls = artist.biographies
     if len(biography_ls) == 0:
         return ''
-    bio = artist.biographies[0]
+    bio = biography_ls[0]
     bio_text = bio['text']
     return truncate_text(bio_text,400)
 
-def get_genre_list():
-    response = en.get('genre/list', bucket=genre_list_buckets)  
+def get_genre_list(page=0):
+    results = NUM_GENRE_RESULTS_PER_PAGE
+    start = page*NUM_GENRE_RESULTS_PER_PAGE
+    response = en.get('genre/list', bucket=genre_list_buckets, results=results, start=start)  
     return response['genres']
 
 def get_genre_by_name(name):

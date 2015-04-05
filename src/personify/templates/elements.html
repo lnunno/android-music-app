@@ -6,15 +6,25 @@ Create an artist media element.
 See: http://getbootstrap.com/components/#media
 #}
 {% macro artist_list_element(artist) %}
-{% set artist_link = '/artist?name='~artist.name %}
+{% if artist is mapping %}
+{% set is_map = True %}
+{% set artist_name = artist['name']%}
+{% else %}
+{% set is_map = False %}
+{% set artist_name = artist.name %}
+{% endif %}
+{% set artist_link = '/artist?name='~artist_name %}
+{% set image_link = echonest_util.get_artist_display_image(artist) %}
 <li class="media">
+    {% if not image_link is none %}
     <div class="media-left">
       <a href="{{artist_link}}">
-        <img class="media-object" src="{{echonest_util.get_artist_display_image(artist)}}" height="64" width="64">
+        <img class="media-object" src="{{image_link}}" height="64" width="64">
       </a>
     </div>
+    {% endif %}
     <div class="media-body">
-      <h4 class="media-heading"><a href="{{artist_link}}">{{artist.name}}</a></h4>
+      <h4 class="media-heading"><a href="{{artist_link}}">{{artist_name}}</a></h4>
       <p>{{echonest_util.get_brief_bio(artist)}}</p>
     </div>
 </li>
@@ -86,10 +96,14 @@ See: http://getbootstrap.com/components/#media
   {% set genre_description = genre['description'] %}
   <li class="media">
     <div class="media-body">
-      <h4 class="media-heading"><a href="/genre?name={{genre_name}}">{{genre_name}}</a></h4>
+      <h4 class="media-heading"><a href="/genre?name={{genre_name}}">{{genre_name.title()}}</a></h4>
       <p>{{genre_description}}</p>
     </div>
   </li>
   {% endfor %}
 </ul>
+{% endmacro %}
+
+{% macro display_genre_detail(artist_list) %}
+{{artists_media_list(artist_list)}}
 {% endmacro %}

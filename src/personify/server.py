@@ -77,6 +77,11 @@ class Personify(object):
         template = env.get_template('404.html')
         return template.render()
     
+    @cherrypy.expose
+    def help(self):
+        template = env.get_template('help.html')
+        return template.render()
+    
 if __name__ == '__main__':
     
     instance = Personify()

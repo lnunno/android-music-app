@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Personify - Help{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+  <div class="container">
+    <h1>Search Help</h1>
+    <p class="lead">
+    The search bar by default searches for artists that closely match your query.
+    </p>
+
+    <p class="lead">
+    For example, <code>foo</code> will search for artists close to the name "foo"; 
+    you can imagine you might find the Foo Fighters with this query.	
+    </p>
+
+    <p class="lead">
+    <code>genre:rock</code> Will search for genres relating to rock music or containing the word "rock".
+    </p>
+  </div>
+</div>
+{% endblock %}

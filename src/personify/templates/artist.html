@@ -57,6 +57,7 @@
         <li role="presentation" class="active"><a href="#bios" aria-controls="bios" role="tab" data-toggle="tab">Bios</a></li>
         <li role="presentation"><a href="#news" aria-controls="news" role="tab" data-toggle="tab">News</a></li>
         <li role="presentation"><a href="#blogs" aria-controls="blogs" role="tab" data-toggle="tab">Blogs</a></li>
+        <li role="presentation"><a href="#similar" aria-controls="similar" role="tab" data-toggle="tab">Similar</a></li>
       </ul>
 
       <!-- Tab panes -->
@@ -74,6 +75,11 @@
         <div role="tabpanel" class="tab-pane fade" id="blogs">
             <div style="padding-top:10px">
                 {{elements.artist_blogs_list(artist)}}    
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="similar">
+            <div style="padding-top:10px">
+                {{elements.similar(artist)}}    
             </div>
         </div>
       </div>

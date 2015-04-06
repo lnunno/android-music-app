@@ -107,3 +107,7 @@ See: http://getbootstrap.com/components/#media
 {% macro display_genre_detail(artist_list) %}
 {{artists_media_list(artist_list)}}
 {% endmacro %}
+
+{% macro similar(artist) %}
+{{artists_media_list(artist.get_similar(buckets=search_artist_buckets))}}
+{% endmacro %}

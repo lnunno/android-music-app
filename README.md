@@ -3,7 +3,7 @@
 
 Prototype music discovery application for Android. Uses the Echo Nest java API along with Google Guava.
 
-[The app is currently deployed on Amazon Web Services here. Click here to visit the app.](http://54.174.47.14:8081/)
+**[The app is currently deployed on Amazon Web Services here. Click here to visit the app.](http://54.174.47.14:8081/)**
 
 **Update:** See the python branch for the web app. **The Android branch is no longer in active development, please see the python branch for the actual application.**
 

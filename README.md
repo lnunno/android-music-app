@@ -43,6 +43,7 @@ Key:
   1. ~~*Selecting a genre lists top artists for that genre.*~~
   2. ~~*Genre list is paginated and the user can go forward/back pages.*~~
 7. ~~*Can search for genres.*~~
+8. ~~Search help page.~~
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration

@@ -33,6 +33,8 @@ Key:
   4. ~~Contains artist familiarity score.~~
   3. *List of artist events.*
   4. *Shows artist photos.*
+    1. ~~One photo~~
+    2. *Multiple photos*.
   5. ~~*Has a link to the artist’s official twitter (if exists).*~~
 6. ~~*Has a list of genres.*~~
   1. ~~*Selecting a genre lists top artists for that genre.*~~

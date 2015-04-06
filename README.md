@@ -36,6 +36,7 @@ Key:
     1. ~~One photo~~
     2. *Multiple photos*.
   5. ~~*Has a link to the artist’s official twitter (if exists).*~~
+  6. ~~*Has a list of similar artists.*~~
 6. ~~*Has a list of genres.*~~
   1. ~~*Selecting a genre lists top artists for that genre.*~~
   2. ~~*Genre list is paginated and the user can go forward/back pages.*~~

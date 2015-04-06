@@ -31,4 +31,4 @@ artist_buckets = [BIOGRAPHIES, BLOGS, GENRE, HOTTTNESSS_RANK, IMAGES, ARTIST_LOC
 # Genre buckets
 DESCRIPTION = 'description'
 
-genre_list_buckets = [DESCRIPTION, URLS]
+genre_buckets = [DESCRIPTION, URLS]

@@ -6,7 +6,7 @@ Created on Mar 21, 2015
 from pyechonest import config
 from personify import secret
 import pyen
-from echo_nest.buckets import genre_list_buckets, artist_buckets
+from echo_nest.buckets import genre_buckets, artist_buckets
 from datetime import datetime
 from personify.constants import NUM_GENRE_RESULTS_PER_PAGE
 
@@ -50,10 +50,10 @@ def get_brief_bio(artist):
 def get_genre_list(page=0):
     results = NUM_GENRE_RESULTS_PER_PAGE
     start = page*NUM_GENRE_RESULTS_PER_PAGE
-    response = en.get('genre/list', bucket=genre_list_buckets, results=results, start=start)  
+    response = en.get('genre/list', bucket=genre_buckets, results=results, start=start)  
     return response['genres']
 
-def get_genre_by_name(name):
+def get_top_artists_for_genre(name):
     '''
     :see: http://developer.echonest.com/docs/v4/genre.html#artists
     :return: A list of artists.
@@ -61,6 +61,10 @@ def get_genre_by_name(name):
     response = en.get('genre/artists', name=name, bucket=artist_buckets)
     artist_list = response['artists']
     return artist_list
+
+def get_genre_details(name):
+    response = en.get('genre/profile', name=name, bucket=genre_buckets)
+    return response['genres'][0]
 
 def pretty_date(date_str):
     dt = datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S')

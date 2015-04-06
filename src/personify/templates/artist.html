@@ -11,11 +11,13 @@
 <h1>{{artist.name}}</h1>
 
 <div class="row">
-  <div class="col-xs-6 artist-img-holder">
+  <div class="col-xs-6">
     <a href="#">
       <img class="artist-img" src="{{echonest_util.get_artist_display_image(artist,placeholder_size=250)}}">
     </a>
   </div>
+</div>
+<div class="row">
   <div class="col-xs-6">
     <ul class="media-list">
         {% set twitter_handle = artist.get_twitter_id() %}
@@ -49,8 +51,6 @@
     </ul>
   </div>
 </div>
-
-    
     <div role="tabpanel">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-justified" role="tablist">

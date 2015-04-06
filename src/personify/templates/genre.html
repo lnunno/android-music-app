@@ -1,9 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Personify - Top Artists for {{name}} Genre{% endblock %}
+{% block title %}Personify - {{name.title()}} Genre{% endblock %}
 
 {% block content %}
+{% set genre_title = name.title() %}
+{% set description = genre_details['description'] %}
 <div class="container">
-	<h1>Top <em>{{name.title()}}</em> Artists</h1>
+	
+	<h1>{{genre_title}}</h1>
+	<p class="lead">{{description}}</p>
+
+	<h1>Top <em>{{genre_title}}</em> Artists</h1>
 	{{elements.display_genre_detail(artist_list)}}
 </div>
 {% endblock %}

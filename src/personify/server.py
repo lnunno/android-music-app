@@ -12,12 +12,11 @@ from pyechonest.artist import Artist
 from pyechonest import config, artist
 from personify import secret
 from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
-    artist_buckets, genre_list_buckets
-from echo_nest.utils import get_genre_list, get_genre_by_name, en
+    artist_buckets, genre_buckets
+from echo_nest.utils import get_genre_list, get_top_artists_for_genre, en, \
+    get_genre_details
 
 class Personify(object):
-    
-    __version__ = '0.4.0'
     
     def __init__(self):
         config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
@@ -53,7 +52,7 @@ class Personify(object):
         if search_term.startswith(GENRE_SEARCH_PREFIX):
             # Genre search
             genre_search_term = search_term[len(GENRE_SEARCH_PREFIX):]
-            results = en.get('genre/search', name=genre_search_term, bucket=genre_list_buckets)['genres']
+            results = en.get('genre/search', name=genre_search_term, bucket=genre_buckets)['genres']
             search_type = 'genres'
         else:
             results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
@@ -69,8 +68,9 @@ class Personify(object):
     @cherrypy.expose
     def genre(self, name):
         template = env.get_template('genre.html')
-        artist_list = get_genre_by_name(name)
-        return template.render(name=name, artist_list=artist_list)
+        artist_list = get_top_artists_for_genre(name)
+        genre_details = get_genre_details(name)
+        return template.render(name=name, artist_list=artist_list, genre_details=genre_details)
         
     @cherrypy.expose(alias='404')
     def not_found(self, status, message, traceback, version):
@@ -80,7 +80,6 @@ class Personify(object):
 if __name__ == '__main__':
     
     instance = Personify()
-    env.globals.update(__version__=Personify.__version__)  # @UndefinedVariable
     
     config = {
               '/':{

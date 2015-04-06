@@ -34,10 +34,10 @@ Key:
   3. *List of artist events.*
   4. *Shows artist photos.*
   5. ~~*Has a link to the artist’s official twitter (if exists).*~~
-6. ~*Has a list of genres.*~
-  1. ~*Selecting a genre lists top artists for that genre.*~
-  2. ~*Genre list is paginated and the user can go forward/back pages.*~
-7. ~*Can search for genres.*~
+6. ~~*Has a list of genres.*~~
+  1. ~~*Selecting a genre lists top artists for that genre.*~~
+  2. ~~*Genre list is paginated and the user can go forward/back pages.*~~
+7. ~~*Can search for genres.*~~
 
 ### Extra features (Probably not in release v 1.0)
 1. Spotify integration

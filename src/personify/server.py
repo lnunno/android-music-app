@@ -16,11 +16,11 @@ from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
 from echo_nest.utils import get_genre_list, get_top_artists_for_genre, en, \
     get_genre_details
 
+
 class Personify(object):
-    
     def __init__(self):
         config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
-    
+
     @cherrypy.expose
     def index(self):
         '''
@@ -28,14 +28,14 @@ class Personify(object):
         '''
         template = env.get_template('index.html')
         return template.render()
-    
+
     @cherrypy.expose
     def top_artists(self):
         template = env.get_template('top_artists.html')
         num_top_artists = 20
         top_artist_list = artist.top_hottt(results=num_top_artists, buckets=top_artist_buckets)
         return template.render(top_artist_list=top_artist_list, num_top_artists=num_top_artists)
-    
+
     @cherrypy.expose
     def artist(self, name):
         '''
@@ -44,7 +44,7 @@ class Personify(object):
         template = env.get_template('artist.html')
         artist = Artist(name, buckets=artist_buckets)
         return template.render(artist=artist)
-        
+
     @cherrypy.expose
     def search(self, search_term):
         template = env.get_template('search.html')
@@ -57,44 +57,44 @@ class Personify(object):
         else:
             results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
         return template.render(results=results, search_term=search_term, search_type=search_type)
-    
+
     @cherrypy.expose
     def genres(self, page=0):
         page = int(page)
         template = env.get_template('genres.html')
         genre_list = get_genre_list(page)
         return template.render(genre_list=genre_list, page=page)
-    
+
     @cherrypy.expose
     def genre(self, name):
         template = env.get_template('genre.html')
         artist_list = get_top_artists_for_genre(name)
         genre_details = get_genre_details(name)
         return template.render(name=name, artist_list=artist_list, genre_details=genre_details)
-        
+
     @cherrypy.expose(alias='404')
     def not_found(self, status, message, traceback, version):
         template = env.get_template('404.html')
         return template.render()
-    
+
     @cherrypy.expose
     def help(self):
         template = env.get_template('help.html')
         return template.render()
-    
+
+
 if __name__ == '__main__':
-    
     instance = Personify()
-    
+
     config = {
-              '/':{
-                   'tools.sessions.on': True,
-                   'tools.staticdir.on': True,
-                   'tools.staticdir.root': BASE_DIR,
-                   'tools.staticdir.dir': 'static',
-                   'error_page.404': instance.not_found
-                   }
-              }
+        '/': {
+            'tools.sessions.on': True,
+            'tools.staticdir.on': True,
+            'tools.staticdir.root': BASE_DIR,
+            'tools.staticdir.dir': 'static',
+            'error_page.404': instance.not_found
+        }
+    }
     cherrypy.server.socket_host = '0.0.0.0'
     cherrypy.server.socket_port = 8080
     cherrypy.quickstart(instance, '/', config=config)

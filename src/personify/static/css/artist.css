@@ -1,14 +1,15 @@
-.artist-img-holder{}
+.artist-img-holder {
+}
 
 .artist-img {
-    height:250px;
+    height: 250px;
 }
 
-.artist-detail{ 
-	font-size: 30px;
+.artist-detail {
+    font-size: 30px;
 }
 
-.artist-detail small{ 
-	font-size: 65%;
-	color: #777;	
+.artist-detail small {
+    font-size: 65%;
+    color: #777;
 }

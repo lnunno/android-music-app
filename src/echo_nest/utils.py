@@ -7,12 +7,13 @@ from pyechonest import config
 import pyen
 
 from personify import secret
-from echo_nest.buckets import genre_buckets, artist_buckets
+from echo_nest.buckets import genre_buckets, artist_buckets, SPOTIFY_ID
 from datetime import datetime
 from personify.constants import NUM_GENRE_RESULTS_PER_PAGE
 
 
 en = None
+
 
 def init():
     global en
@@ -85,6 +86,11 @@ def pretty_score(score_num):
     score_num = score_num * 100
     score_num = int(score_num)
     return '%d%%' % (score_num)
+
+
+def get_spotify_id(artist_id):
+    response = en.get('artist/profile', id=artist_id, bucket=SPOTIFY_ID)
+    return response['artist']['foreign_ids'][0]['foreign_id']
 
 
 init()

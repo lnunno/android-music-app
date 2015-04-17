@@ -5,6 +5,7 @@ Created on Mar 21, 2015
 '''
 from pyechonest import config
 import pyen
+import pylast
 
 from personify import secret
 from echo_nest.buckets import genre_buckets, artist_buckets, SPOTIFY_ID
@@ -13,12 +14,13 @@ from personify.constants import NUM_GENRE_RESULTS_PER_PAGE
 
 
 en = None
-
+lastfm = None
 
 def init():
-    global en
+    global en, lastfm
     en = pyen.Pyen(api_key=secret.ECHO_NEST_API_KEY)
     config.ECHO_NEST_API_KEY = secret.ECHO_NEST_API_KEY
+    lastfm = pylast.LastFMNetwork(api_key=secret.LASTFM_API_KEY,api_secret=secret.LASTFM_SECRET)
 
 
 def truncate_text(text, num_char=80):

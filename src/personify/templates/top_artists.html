@@ -1,9 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Personify - Top {{num_top_artists}} Artists{% endblock %}
+{% block title %}Personify - Top Artists{% endblock %}
 
 {% block content %}
 <div class="container">
 <h1>Today's Top {{num_top_artists}} Artists</h1>
 {{elements.artists_media_list(top_artist_list)}}
+<nav>
+  <ul class="pager">
+	<li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="/top_artists?page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+	<li class="next"><a href="/top_artists?page={{page+1}}">Next <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
 </div>
 {% endblock %}

@@ -14,7 +14,6 @@ from personify.constants import NUM_GENRE_RESULTS_PER_PAGE
 
 en = None
 
-
 def init():
     global en
     en = pyen.Pyen(api_key=secret.ECHO_NEST_API_KEY)

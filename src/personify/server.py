@@ -6,7 +6,7 @@ Created on Mar 21, 2015
 @author: lnunno
 '''
 import cherrypy
-from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX
+from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX, NUM_ARTIST_RESULTS_PER_PAGE
 from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
@@ -30,11 +30,13 @@ class Personify(object):
         return template.render()
 
     @cherrypy.expose
-    def top_artists(self):
+    def top_artists(self, page=0):
+        page = int(page)
         template = env.get_template('top_artists.html')
-        num_top_artists = 20
-        top_artist_list = artist.top_hottt(results=num_top_artists, buckets=top_artist_buckets)
-        return template.render(top_artist_list=top_artist_list, num_top_artists=num_top_artists)
+        start_result_num = page*NUM_ARTIST_RESULTS_PER_PAGE
+        num_results = 10
+        top_artist_list = artist.top_hottt(start=start_result_num, results=num_results, buckets=top_artist_buckets)
+        return template.render(top_artist_list=top_artist_list, page=page)
 
     @cherrypy.expose
     def artist(self, name):

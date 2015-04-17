@@ -23,10 +23,11 @@ SONGS = 'songs'
 URLS = 'urls'
 VIDEO = 'video'
 YEARS_ACTIVE = 'years_active'
+SPOTIFY_ID = 'id:spotify'
 
 top_artist_buckets = [HOTTTNESSS_RANK, BIOGRAPHIES, IMAGES]
 search_artist_buckets = top_artist_buckets
-artist_buckets = [BIOGRAPHIES, BLOGS, GENRE, HOTTTNESSS_RANK, IMAGES, ARTIST_LOCATION, NEWS, REVIEWS, YEARS_ACTIVE]
+artist_buckets = [BIOGRAPHIES, BLOGS, GENRE, HOTTTNESSS_RANK, IMAGES, ARTIST_LOCATION, NEWS, REVIEWS, YEARS_ACTIVE, SPOTIFY_ID]
 
 # Genre buckets
 DESCRIPTION = 'description'

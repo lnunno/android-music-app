@@ -9,5 +9,9 @@
 {% else %}
 {{elements.artists_media_list(results)}}
 {% endif %}
+<ul class="pager">
+    <li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="/search?search_term={{ search_term }}&page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li class="next"><a href="/search?search_term={{ search_term }}&page={{ page+1 }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+</ul>
 </div>
 {% endblock %}

@@ -6,10 +6,11 @@ Created on Mar 21, 2015
 @author: lnunno
 '''
 import cherrypy
-from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX, NUM_ARTIST_RESULTS_PER_PAGE
-from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
+
+from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX, NUM_ARTIST_RESULTS_PER_PAGE, NUM_GENRE_RESULTS_PER_PAGE
+from personify.jinja_init import env
 from personify import secret
 from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
     artist_buckets, genre_buckets
@@ -33,7 +34,7 @@ class Personify(object):
     def top_artists(self, page=0):
         page = int(page)
         template = env.get_template('top_artists.html')
-        start_result_num = page*NUM_ARTIST_RESULTS_PER_PAGE
+        start_result_num = page * NUM_ARTIST_RESULTS_PER_PAGE
         num_results = 10
         top_artist_list = artist.top_hottt(start=start_result_num, results=num_results, buckets=top_artist_buckets)
         return template.render(top_artist_list=top_artist_list, page=page)
@@ -48,17 +49,24 @@ class Personify(object):
         return template.render(artist=artist)
 
     @cherrypy.expose
-    def search(self, search_term):
+    def search(self, search_term, page=0):
+        page = int(page)
         template = env.get_template('search.html')
         search_type = 'artists'
         if search_term.startswith(GENRE_SEARCH_PREFIX):
             # Genre search
+            start = page * NUM_GENRE_RESULTS_PER_PAGE
             genre_search_term = search_term[len(GENRE_SEARCH_PREFIX):]
-            results = en.get('genre/search', name=genre_search_term, bucket=genre_buckets)['genres']
+            results = en.get('genre/search', name=genre_search_term, bucket=genre_buckets, start=start)['genres']
             search_type = 'genres'
         else:
-            results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True)
-        return template.render(results=results, search_term=search_term, search_type=search_type)
+            start = page * NUM_ARTIST_RESULTS_PER_PAGE
+            results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True, start=start)
+        return template.render(results=results, search_term=search_term, search_type=search_type, page=page)
+
+    @cherrypy.expose
+    def styles(self, page=0):
+        page = int(page)
 
     @cherrypy.expose
     def genres(self, page=0):

@@ -93,4 +93,4 @@ def get_spotify_id(artist_id):
     return response['artist']['foreign_ids'][0]['foreign_id']
 
 
-init()
+init()  # Initialize when imported.

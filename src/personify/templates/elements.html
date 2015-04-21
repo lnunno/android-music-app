@@ -111,3 +111,10 @@ See: http://getbootstrap.com/components/#media
 {% macro similar(artist) %}
 {{artists_media_list(artist.get_similar(buckets=search_artist_buckets))}}
 {% endmacro %}
+
+{% macro pager(link,page) %}
+<ul class="pager">
+    <li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="{{ link }}?page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li class="next"><a href="{{ link }}?page={{ page+1 }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+</ul>
+{% endmacro %}

@@ -3,6 +3,8 @@ Created on Mar 21, 2015
 
 @author: lnunno
 '''
+import random
+
 from pyechonest import config
 import pyen
 
@@ -91,6 +93,20 @@ def pretty_score(score_num):
 def get_spotify_id(artist_id):
     response = en.get('artist/profile', id=artist_id, bucket=SPOTIFY_ID)
     return response['artist']['foreign_ids'][0]['foreign_id']
+
+
+def get_styles():
+    response = en.get('artist/list_terms', type='style')
+    return response['terms']
+
+
+def get_moods():
+    response = en.get('artist/list_terms', type='mood')
+    return response['terms']
+
+
+def random_modifier_class():
+    return random.choice(['default', 'primary', 'success', 'info', 'warning', 'danger'])
 
 
 init()  # Initialize when imported.

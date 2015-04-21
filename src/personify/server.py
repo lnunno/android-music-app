@@ -15,7 +15,7 @@ from personify import secret
 from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
     artist_buckets, genre_buckets
 from echo_nest.utils import get_genre_list, get_top_artists_for_genre, en, \
-    get_genre_details
+    get_genre_details, get_moods, get_styles
 
 
 class Personify(object):
@@ -69,8 +69,15 @@ class Personify(object):
     def styles(self, page=0):
         page = int(page)
         template = env.get_template('styles.html')
-        results = artist.search()
-        template.render(page=page)
+        styles_list = get_styles()
+        return template.render(styles_list=styles_list, page=page)
+
+    @cherrypy.expose
+    def moods(self, page=0):
+        page = int(page)
+        template = env.get_template('moods.html')
+        moods_list = get_moods()
+        return template.render(moods_list=moods_list, page=page)
 
     @cherrypy.expose
     def genres(self, page=0):

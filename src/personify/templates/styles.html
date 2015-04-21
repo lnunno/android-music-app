@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Personify - Styles{% endblock %}
+{% block head %}
+ <link rel="stylesheet" type="text/css" href="/css/styles.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Exploring Music Styles</h1>
+<p class="lead">Click a link to explore top artists in that style!</p>
+{% for style in styles_list %}
+{% set style_name = style['name'] %}
+<a class="btn btn-lg btn-{{ echonest_util.random_modifier_class() }}" href="/style?name={{ style_name }}">{{ style_name }}</a>
+{% endfor %}
+</div>
+{% endblock %}

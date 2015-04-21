@@ -20,3 +20,9 @@ div.c-wrapper {
 .padding10-bottom {
     padding-bottom: 10px;
 }
+
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;
+}

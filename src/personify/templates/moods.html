@@ -7,7 +7,7 @@
 <p class="lead">Click a link to find artists that match the mood you're in.</p>
 {% for mood in moods_list %}
 {% set mood_name = mood['name'] %}
-<a class="btn btn-{{ echonest_util.random_modifier_class() }} btn-lg" href="/mood?name={{ mood_name|e }}">{{ mood_name }}</a>
+<a class="btn btn-{{ echonest_util.random_modifier_class() }} btn-xl" href="/mood?name={{ mood_name|e }}">{{ mood_name }}</a>
 {% endfor %}
 </div>
 {% endblock %}

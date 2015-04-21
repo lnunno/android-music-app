@@ -61,12 +61,16 @@ class Personify(object):
             search_type = 'genres'
         else:
             start = page * NUM_ARTIST_RESULTS_PER_PAGE
-            results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True, start=start)
+            results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True, start=start,
+                                    sort='hotttnesss-desc')
         return template.render(results=results, search_term=search_term, search_type=search_type, page=page)
 
     @cherrypy.expose
     def styles(self, page=0):
         page = int(page)
+        template = env.get_template('styles.html')
+        results = artist.search()
+        template.render(page=page)
 
     @cherrypy.expose
     def genres(self, page=0):

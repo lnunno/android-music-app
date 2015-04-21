@@ -6,8 +6,7 @@ Created on Mar 21, 2015
 @author: lnunno
 '''
 import cherrypy
-
-from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX, NUM_ARTIST_RESULTS_PER_PAGE, LASTFM_USERNAME_KEY
+from personify.constants import BASE_DIR, GENRE_SEARCH_PREFIX, NUM_ARTIST_RESULTS_PER_PAGE
 from personify.jinja_init import env
 from pyechonest.artist import Artist
 from pyechonest import config, artist
@@ -15,7 +14,7 @@ from personify import secret
 from echo_nest.buckets import top_artist_buckets, search_artist_buckets, \
     artist_buckets, genre_buckets
 from echo_nest.utils import get_genre_list, get_top_artists_for_genre, en, \
-    get_genre_details, lastfm
+    get_genre_details
 
 
 class Personify(object):
@@ -34,7 +33,7 @@ class Personify(object):
     def top_artists(self, page=0):
         page = int(page)
         template = env.get_template('top_artists.html')
-        start_result_num = page * NUM_ARTIST_RESULTS_PER_PAGE
+        start_result_num = page*NUM_ARTIST_RESULTS_PER_PAGE
         num_results = 10
         top_artist_list = artist.top_hottt(start=start_result_num, results=num_results, buckets=top_artist_buckets)
         return template.render(top_artist_list=top_artist_list, page=page)
@@ -84,18 +83,6 @@ class Personify(object):
     def help(self):
         template = env.get_template('help.html')
         return template.render()
-
-    @cherrypy.expose
-    def connect_accounts(self):
-        template = env.get_template('connect_accounts.html')
-        return template.render()
-
-    @cherrypy.expose
-    def login_lastfm(self, username):
-        user = lastfm.get_user(username)
-        cherrypy.session[LASTFM_USERNAME_KEY] = user
-        env.globals.update(session=cherrypy.session)
-        return 'True'
 
 
 if __name__ == '__main__':

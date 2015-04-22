@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Personify - Top Artists in the {{ name }} Style{% endblock %}
+{% block head %}
+ <link rel="stylesheet" type="text/css" href="/css/styles.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Top Artists in the {{ name }} Style</h1>
+{{elements.artists_media_list(artists)}}
+<ul class="pager">
+    <li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="/style?name={{ name }}&page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li class="next"><a href="/style?name={{ name }}&page={{ page+1 }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+</ul>
+</div>
+{% endblock %}

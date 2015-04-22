@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Personify - {{ name }} Artists{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Feeling {{ name }}? Try listening to these artists...</h1>
+{{elements.artists_media_list(artists)}}
+<ul class="pager">
+    <li class="previous{% if page <= 0 %} disabled{% endif%}"><a href="/mood?name={{ name }}&page={{page-1}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li class="next"><a href="/mood?name={{ name }}&page={{ page+1 }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+</ul>
+</div>
+{% endblock %}

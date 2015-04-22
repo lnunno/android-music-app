@@ -57,12 +57,13 @@ class Personify(object):
             # Genre search
             start = page * NUM_GENRE_RESULTS_PER_PAGE
             genre_search_term = search_term[len(GENRE_SEARCH_PREFIX):]
-            results = en.get('genre/search', name=genre_search_term, bucket=genre_buckets, start=start)['genres']
+            results = en.get('genre/search', name=genre_search_term, bucket=genre_buckets, start=start,
+                             results=NUM_GENRE_RESULTS_PER_PAGE)['genres']
             search_type = 'genres'
         else:
             start = page * NUM_ARTIST_RESULTS_PER_PAGE
             results = artist.search(name=search_term, buckets=search_artist_buckets, fuzzy_match=True, start=start,
-                                    sort='hotttnesss-desc')
+                                    sort='hotttnesss-desc', results=NUM_ARTIST_RESULTS_PER_PAGE)
         return template.render(results=results, search_term=search_term, search_type=search_type, page=page)
 
     @cherrypy.expose
@@ -73,11 +74,29 @@ class Personify(object):
         return template.render(styles_list=styles_list, page=page)
 
     @cherrypy.expose
+    def style(self, name, page=0):
+        page = int(page)
+        start = page * NUM_ARTIST_RESULTS_PER_PAGE
+        template = env.get_template('style.html')
+        artists = artist.search(style=name, start=start, results=NUM_ARTIST_RESULTS_PER_PAGE,
+                                buckets=search_artist_buckets)
+        return template.render(name=name, artists=artists, page=page)
+
+    @cherrypy.expose
     def moods(self, page=0):
         page = int(page)
         template = env.get_template('moods.html')
         moods_list = get_moods()
         return template.render(moods_list=moods_list, page=page)
+
+    @cherrypy.expose
+    def mood(self, name, page=0):
+        page = int(page)
+        start = page * NUM_ARTIST_RESULTS_PER_PAGE
+        template = env.get_template('mood.html')
+        artists = artist.search(mood=name, start=start, results=NUM_ARTIST_RESULTS_PER_PAGE,
+                                buckets=search_artist_buckets)
+        return template.render(name=name, artists=artists, page=page)
 
     @cherrypy.expose
     def genres(self, page=0):
@@ -117,5 +136,5 @@ if __name__ == '__main__':
         }
     }
     cherrypy.server.socket_host = '0.0.0.0'
-    cherrypy.server.socket_port = 8080
+    cherrypy.server.socket_port = 80
     cherrypy.quickstart(instance, '/', config=config)

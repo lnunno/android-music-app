@@ -92,7 +92,10 @@ def pretty_score(score_num):
 
 def get_spotify_id(artist_id):
     response = en.get('artist/profile', id=artist_id, bucket=SPOTIFY_ID)
-    return response['artist']['foreign_ids'][0]['foreign_id']
+    artist_foreign_ids_ = response['artist'].get('foreign_ids')
+    if artist_foreign_ids_ is None:
+        return None
+    return artist_foreign_ids_[0]['foreign_id']
 
 
 def get_styles():
